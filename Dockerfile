@@ -3,8 +3,11 @@ FROM nginx:alpine
 # نسخ ملفات الموقع
 COPY . /usr/share/nginx/html
 
-# نسخ الكونفيج المخصص
+# نسخ ملف الكونفيج
 COPY nginx.conf /etc/nginx/nginx.conf
+
+# إعطاء صلاحيات ملفات HTML/CSS/JS
+RUN chown -R nginx:nginx /usr/share/nginx/html
 
 # إنشاء جميع مجلدات الكاش المطلوبة وإعطاء صلاحيات للمستخدم nginx
 RUN mkdir -p /var/cache/nginx/client_temp && \
