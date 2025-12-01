@@ -41,3 +41,4 @@ jobs:
           tags: |
             ${{ env.IMAGE }}:${{ env.TAG }}
             ${{ env.IMAGE }}:latest
+
