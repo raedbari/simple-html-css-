@@ -3,7 +3,7 @@ FROM nginx:alpine
 # نسخ ملفات الموقع
 COPY . /usr/share/nginx/html
 
-# نسخ ملف الكونفيج
+# نسخ الكونفيج المخصص
 COPY nginx.conf /etc/nginx/nginx.conf
 
 # إنشاء جميع مجلدات الكاش المطلوبة وإعطاء صلاحيات للمستخدم nginx
