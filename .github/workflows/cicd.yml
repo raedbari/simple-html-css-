@@ -15,7 +15,6 @@ jobs:
 
     env:
       IMAGE: raedbari/test
-      TAG: ${{ github.sha }}
 
     permissions:
       contents: read
@@ -39,6 +38,4 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ env.IMAGE }}:${{ env.TAG }}
-            ${{ env.IMAGE }}:latest
-
+            ${{ env.IMAGE }}:1.0
