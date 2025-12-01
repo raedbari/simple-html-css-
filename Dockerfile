@@ -1,13 +1,18 @@
 FROM nginx:alpine
 
-# نسخ ملفات HTML
+# نسخ ملفات الموقع
 COPY . /usr/share/nginx/html
 
-# نسخ nginx.conf إلى مكانه داخل الحاوية
+# نسخ ملف الكونفيج
 COPY nginx.conf /etc/nginx/nginx.conf
 
-# أخبر Docker أن المنفذ 3000 هو المنفذ الأساسي
+# إنشاء مجلدات الكاش + إعطاء صلاحيات
+RUN mkdir -p /var/cache/nginx && \
+    chown -R nginx:nginx /var/cache/nginx
+
+# تغيير المستخدم إلى nginx (مهم جداً)
+USER nginx
+
 EXPOSE 3000
 
-# تشغيل nginx
 CMD ["nginx", "-g", "daemon off;"]
