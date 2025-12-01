@@ -38,4 +38,4 @@ jobs:
           context: .
           push: true
           tags: |
-            ${{ env.IMAGE }}:1.0
+            ${{ env.IMAGE }}:latest

@@ -1,25 +1,50 @@
 body {
     margin: 0;
     padding: 0;
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    color: #1d7a32;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #0b3d91, #1fa9ff);
+    animation: fadeIn 1.2s ease-in-out;
 }
 
-.container {
+.card {
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(12px);
+    padding: 40px 60px;
+    border-radius: 18px;
     text-align: center;
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+    animation: slideUp 1s ease;
 }
 
 h1 {
-    font-size: 50px;
-    color: #1d7a32;
+    font-size: 42px;
+    color: #ffffff;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 28px;
+    color: #e8f4ff;
+    margin-top: 0;
 }
 
 p {
-    font-size: 28px;
-    color: #444;
+    font-size: 20px;
+    color: #d9eaff;
+    opacity: 0.9;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
 }
